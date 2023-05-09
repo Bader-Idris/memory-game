@@ -58,6 +58,7 @@ select:focus-visible {
   font-size: 24px;
   overflow: hidden;
   border: 2px solid #2196f3;
+  position: relative;
 }
 .info-container .name {
   float: left;
