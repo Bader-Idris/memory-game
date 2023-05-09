@@ -114,6 +114,7 @@ function gameOver() {
   let restartGame = $('.restart-game')
   funnyFail.play()
   restartGame.onclick = ((e => location.reload()));
+//   clearInterval(counter);// make me usable for vanishing my bug
 };
 function matchedFailure() {
   failLevel.forEach((e, ind, arr) => {
