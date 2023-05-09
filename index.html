@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Game</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" type="image/x-icon" href="#">
+</head>
+<body>
+  <body>
+    <div class="control-buttons">
+      <select title="Select an option...">
+        <option value="easy">Easy: 15 tries, 20 minutes</option>
+        <option value="medium">Medium: 10 tries, 15 minutes</option>
+        <option value="hard">Hard: 5 tries, 10 minutes</option>
+        <option value="nightmare">Nightmare: 2 tries, 5 minutes</option>
+        <option value="" disabled selected>Select A Level</option>
+      </select>
+      <span>Start The Game</span>
+    </div>
+    <div class="info-container">
+      <div class="name">
+        Hello: <span></span>
+      </div>
+      <div class="countdown">
+        <span class="minutes">##</span>
+        <span class="seconds">##</span>
+      </div>
+      <div class="level">easy</div>
+      <div class="tries">
+        Wrong Tries: <span>0</span>
+      </div>
+    </div>
+    <div class="memory-game-blocks">
+      <div class="game-block" data-organs="brain">
+        <div class="face front"></div>
+        <div class="face back">
+          <img decoding="async" src="images/brain.png" alt="">
+        </div>
+      </div>
+      <div class="game-block" data-organs="brain">
+        <div class="face front"></div>
+        <div class="face back">
+          <img decoding="async" src="images/brain.png" alt="">
+        </div>
+      </div>
+      <div class="game-block" data-organs="ear">
+        <div class="face front"></div>
+        <div class="face back">
+          <img decoding="async" src="images/ear.png" alt="">
+        </div>
+      </div>
+      <div class="game-block" data-organs="ear">
+        <div class="face front"></div>
+        <div class="face back">
+          <img decoding="async" src="images/ear.png" alt="">
+        </div>
+      </div>
+      <div class="game-block" data-organs="eye">
+        <div class="face front"></div>
+        <div class="face back">
+          <img decoding="async" src="images/eye.png" alt="">
+        </div>
+      </div>
+      <div class="game-block" data-organs="eye">
+        <div class="face front"></div>
+        <div class="face back">
+          <img decoding="async" src="images/eye.png" alt="">
+        </div>
+      </div>
+      <div class="game-block" data-organs="follicle">
+        <div class="face front"></div>
+        <div class="face back">
+          <img decoding="async" src="images/follicle.png" alt="">
+        </div>
+      </div>
+      <div class="game-block" data-organs="follicle">
+        <div class="face front"></div>
+        <div class="face back">
+          <img decoding="async" src="images/follicle.png" alt="">
+        </div>
+      </div>
+      <div class="game-block" data-organs="mouth">
+        <div class="face front"></div>
+        <div class="face back">
+          <img decoding="async" src="images/mouth.png" alt="">
+        </div>
+      </div>
+      <div class="game-block" data-organs="mouth">
+        <div class="face front"></div>
+        <div class="face back">
+          <img decoding="async" src="images/mouth.png" alt="">
+        </div>
+      </div>
+      <div class="game-block" data-organs="nose">
+        <div class="face front"></div>
+        <div class="face back">
+          <img decoding="async" src="images/nose.png" alt="">
+        </div>
+      </div>
+      <div class="game-block" data-organs="nose">
+        <div class="face front"></div>
+        <div class="face back">
+          <img decoding="async" src="images/nose.png" alt="">
+        </div>
+      </div>
+      <div class="game-block" data-organs="sensitivity">
+        <div class="face front"></div>
+        <div class="face back">
+          <img decoding="async" src="images/sensitivity.png" alt="">
+        </div>
+      </div>
+      <div class="game-block" data-organs="sensitivity">
+        <div class="face front"></div>
+        <div class="face back">
+          <img decoding="async" src="images/sensitivity.png" alt="">
+        </div>
+      </div>
+      <div class="game-block" data-organs="tongue">
+        <div class="face front"></div>
+        <div class="face back">
+          <img decoding="async" src="images/tongue.png" alt="">
+        </div>
+      </div>
+      <div class="game-block" data-organs="tongue">
+        <div class="face front"></div>
+        <div class="face back">
+          <img decoding="async" src="images/tongue.png" alt="">
+        </div>
+      </div>
+      <div class="game-block" data-organs="touch">
+        <div class="face front"></div>
+        <div class="face back">
+          <img decoding="async" src="images/touch.png" alt="">
+        </div>
+      </div>
+      <div class="game-block" data-organs="touch">
+        <div class="face front"></div>
+        <div class="face back">
+          <img decoding="async" src="images/touch.png" alt="">
+        </div>
+      </div>
+      <div class="game-block" data-organs="baby.png">
+        <div class="face front"></div>
+        <div class="face back">
+          <img decoding="async" src="images/baby.png" alt="">
+        </div>
+      </div>
+      <div class="game-block" data-organs="baby.png">
+        <div class="face front"></div>
+        <div class="face back">
+          <img decoding="async" src="images/baby.png" alt="">
+        </div>
+      </div>
+    </div>
+    <audio id="success" src="audio/success.mp3" preload="auto"></audio>
+    <audio id="fail" src="audio/fail.mp3" preload="auto"></audio>
+    <audio id="funny-fail" src="audio/funny-Fail-effect.mp3" preload="auto"></audio>
+    <audio id="game-starting" src="audio/game-starts.mp3" preload="auto"></audio>
+    <audio id="clap-winning" src="audio/clap-sound-effect.mp3" preload="auto"></audio>
+    <script src="app.js"></script>
+  </body>
+</html>

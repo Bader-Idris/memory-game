@@ -1,0 +1,200 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Tahoma, sans-serif;
+}
+.control-buttons {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: rgba(3, 169, 244, 0.9);
+}
+select:focus-visible {
+  outline: none;
+}
+.control-buttons select {
+  position: absolute;
+  left: 50%;
+  top: calc(50% - 80px);
+  transform: translate(-50%, -50%);
+  background-color: #9E9E9E;
+  color: #FFF;
+  padding: 15px 25px;
+  font-size: 30px;
+  text-align: center;
+  border-radius: 6px;
+  cursor: pointer;
+  user-select: none;
+  /* this, 🔽 span, and .restart-game need to be shortened */
+}
+.control-buttons select option {
+  font-weight: bold;
+  font-size: 18px;
+  background-color: #2196F3;
+}
+.control-buttons span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #F44336;
+  color: #FFF;
+  padding: 15px 25px;
+  font-size: 30px;
+  text-align: center;
+  border-radius: 6px;
+  cursor: pointer;
+  user-select: none;
+}
+.info-container {
+  width: 1080px;
+  margin: 20px auto 0;
+  background-color: #F6F6F6;
+  padding: 20px;
+  font-size: 24px;
+  overflow: hidden;
+  border: 2px solid #2196f3;
+}
+.info-container .name {
+  float: left;
+  width: 40%;
+}
+.info-container .level {
+  text-align: center;
+  width: 20%;
+  display: inline-block;
+  text-transform: uppercase;
+}
+.info-container .countdown {
+  position: absolute;
+  left: 30%;
+  border-left: 5px solid #03A9F4;
+  padding: 4px 10px;
+  background: #333;
+  font-size: 18px;
+  transition: 1s ease-in-out;
+}
+.info-container .countdown:hover::before {
+  content: 'Time Left';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 85%;
+  left: -1px;
+  font-size: 14px;
+  line-height: 28px;
+  color: #323232;
+  text-transform: uppercase;
+}
+.info-container .countdown .seconds::before {
+  content: ':';
+  width: 100%;
+  height: 100%;
+  margin-right: 4px;
+}
+.info-container .tries {
+  float: right;
+  width: 40%;
+  text-align: right;
+}
+.info-container .tries span {
+  color: #E91E63;
+}
+.info-container div {
+  color: #FF5722;
+  font-weight: bold;
+}
+.memory-game-blocks {
+  display: flex;
+  width: 1100px;
+  flex-wrap: wrap;
+  margin: 20px auto;
+  user-select: none;
+}
+.memory-game-blocks.no-clicking {
+  pointer-events: none;
+}
+.memory-game-blocks .game-block {
+  height: 200px;
+  transition: transform .5s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+  flex: 1 0 200px;
+  margin: 0 10px 20px;
+}
+.memory-game-blocks .game-block .front {
+  background-color: #333;
+  line-height: 200px;
+}
+.memory-game-blocks .game-block .front:before {
+  content: '!';
+  color: #FFF;
+  font-size: 140px;
+  font-weight: bold;
+}
+.memory-game-blocks .game-block .back {
+  background-color: #607D8B;
+  transform: rotateY(180deg);
+}
+.memory-game-blocks .game-block .back img {
+  width: 140px;
+  height: 140px;
+  margin-top: 30px;
+}
+.memory-game-blocks .game-block .face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  backface-visibility: hidden;
+  border: 5px solid #2196F3;
+}
+.memory-game-blocks .game-block.is-flipped,
+.memory-game-blocks .game-block.has-match {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  pointer-events: none;
+}
+.game-over {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: #0011fded;
+}
+.game-over div,
+.game-over .restart-game {
+  position: absolute;
+  left: 50%;
+  background-color: #F44336;
+  color: #FFF;
+  padding: 15px 25px;
+  text-align: center;
+  border-radius: 6px;
+  user-select: none;
+  transform: translate(-50%, -50%);
+}
+.game-over div{
+  top: calc(50% - 80px);
+  font-size: 60px;
+  background-color: #333;
+  padding: 10px 50px;
+  text-transform: uppercase;
+}
+.game-over .restart-game {
+  top: calc(50%);
+  font-size: 22px;
+  background-color: #F44336;
+  cursor: pointer;
+}
+.game-over .restart-game:hover {
+  opacity: .8;
+}
